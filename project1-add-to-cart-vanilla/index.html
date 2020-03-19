@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+  <style>
+    #main {
+      display: flex;
+      height: 100vh;
+    }
+
+    #left {
+      text-align: center;
+      flex: 3;
+      border-right: 1px solid black;
+    }
+
+    #right {
+      text-align: center;
+
+      flex: 1;
+    }
+
+    #items {
+      padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      margin-right: 16px;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      width: 250px;
+      box-shadow: 4px 4px lavender;
+      color: lavender;
+    }
+
+    #cartitems {
+      padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    .cartitem {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid orchid;
+      color: brown;
+    }
+
+    .cartitem:hover {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid orchid;
+      background-color: red;
+      color: white;
+    }
+
+    #cart {
+      height:100%;
+    }
+
+    #total {
+      margin-top: 16px;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <div id="left">
+        <h1>Products</h1>
+        <div id="items">
+          <!-- <div class="item">
+            <h5>Item1</h5>
+          </div> -->
+        </div>
+      </div>
+      <div id="right">
+        <div id="cart">
+          <h2>Cart</h2>
+            <div id="cartitems">
+              <!-- <div class="cartitem">
+                <h3 class="cartitemtext">Item1</h3> 
+              </div> -->
+            </div>
+            <div id="total">
+              <h2>Total : Rs. 0</h2>
+            </div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

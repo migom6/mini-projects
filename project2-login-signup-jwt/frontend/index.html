@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <h3>Name</h3>
+    <div id="name"></div>
+    <h3>Created at</h3>
+    <div id="date"></div>
+    <button id="logout">logout</button>
+  </body>
+  <script>
+    const main = () => {
+      auth_token = localStorage.getItem("auth_token");
+      const options = {
+        method: "GET",
+        mode: "cors",
+        redirect: "follow",
+        headers: {
+          "Content-Type": "application/json",
+          auth_token: auth_token
+        }
+      };
+
+      fetch("http://localhost:3000/api/user/details", options)
+        .then(res => {
+          return res.json();
+        })
+        .then(res => {
+          document.getElementById("name").innerHTML = res.name;
+          document.getElementById("date").innerHTML = res.date;
+          console.log(res);
+        })
+        .catch(e => {
+          window.location = "http://localhost:8000/login.html";
+
+          console.log(e);
+        });
+    };
+
+    main();
+
+    document.getElementById("logout").onclick = () => {
+      localStorage.clear("auth-token");
+      window.location = "http://localhost:8000/login.html";
+    };
+  </script>
+</html>
