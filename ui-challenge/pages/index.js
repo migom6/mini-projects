@@ -1,172 +1,84 @@
-import SidebarSection from "../components/youtube/SidebarSection";
-import VideoGrid from "../components/youtube/VideoGrid";
+import React from "react";
+import InfoBar from "../components/instagram/InfoBar";
+import InstaCards from "../components/instagram/InstaCards";
 
-const list1 = [
-  { icon: "home", title: "Home" },
-  { icon: "fire", title: "Trending" },
-  { icon: "photo-video", title: "Subscription" },
-];
-
-const list2 = [
-  { icon: "file-video", title: "Library" },
-  { icon: "history", title: "History" },
-  { icon: "file-medical", title: "Your videos" },
-  { icon: "globe", title: "World" },
-];
-
-const list3 = [
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJy3NbK9ylwMmt4O8vhinJ1Dgj8lLxjLeLlvnA=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Kitze",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJwhTZqqXXPwbiph5j5121PI9C6BWQDVF7K9Ow=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "stephnie",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJy3gTTvkKnNHLETwVUFTPostURCeh7UcIbOrA=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "RiceLive",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJxuUelc0HG5tHfF0mHr_zqOKc4RRhz4jjkq0w=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Ben Awad",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJxl6BRcZk_LGbRibMhX4wAIOjD9Sw8KvmABnw=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Brawadis",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJy3NbK9ylwMmt4O8vhinJ1Dgj8lLxjLeLlvnA=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Kitze",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJwhTZqqXXPwbiph5j5121PI9C6BWQDVF7K9Ow=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "stephnie",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJy3gTTvkKnNHLETwVUFTPostURCeh7UcIbOrA=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "RiceLive",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJxuUelc0HG5tHfF0mHr_zqOKc4RRhz4jjkq0w=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Ben Awad",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJxl6BRcZk_LGbRibMhX4wAIOjD9Sw8KvmABnw=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Brawadis",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJy3NbK9ylwMmt4O8vhinJ1Dgj8lLxjLeLlvnA=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Kitze",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJwhTZqqXXPwbiph5j5121PI9C6BWQDVF7K9Ow=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "stephnie",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJy3gTTvkKnNHLETwVUFTPostURCeh7UcIbOrA=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "RiceLive",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJxuUelc0HG5tHfF0mHr_zqOKc4RRhz4jjkq0w=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Ben Awad",
-  },
-  {
-    src:
-      "https://yt3.ggpht.com/a/AATXAJxl6BRcZk_LGbRibMhX4wAIOjD9Sw8KvmABnw=s88-c-k-c0xffffffff-no-rj-mo",
-    title: "Brawadis",
-  },
-];
-export default function Home() {
+function Home() {
   return (
-    <div className="h-screen overflow-hidden">
+    <>
       {/* nav */}
-      <div className="flex items-center h-16 w-full bg-yt-nav">
-        {/* logo */}
-        <div className="w-56  flex items-center  ">
-          {/* hamburger */}
-          <div className="ml-6 text-lg text-white cursor-pointer">
-            <i className="fas fa-bars "></i>
-          </div>
-          {/* y-t icon */}
-          <div className="relative ml-6 pr-1 cursor-pointer">
-            <div
-              className="absolute bg-white w-4 h-3 z-0"
-              style={{ top: "0.5em", right: "0.4em" }}
-            ></div>
-            <i
-              className="fab fa-youtube relative text-3xl z-10"
-              style={{ color: "red" }}
-            ></i>
-          </div>
-          {/* y-t text */}
-          <div className="text-white tracking-tightest text-xl font-semibold cursor-pointer ">
-            YouTube
-          </div>
-        </div>
-        {/* search bar and btn */}
-        <div className="flex flex-1 justify-center  px-20">
-          <div className="flex w-full h-8 justify-center items-center ">
-            <input
-              className=" w-full h-full max-w-lg rounded-sm px-3 bg-yt-input text-yt-text"
-              placeholder="Search"
-            />
-            <button className="w-16 h-full rounded-sm text-yt-text bg-yt-lightest focus:outline-none cursor-pointer">
-              <i className=" fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-        {/* yt action buttons */}
-        <div className="w-64 flex justify-end">
-          <div className="mr-8 text-lg text-white cursor-pointer">
-            <i className="fas fa-video"></i>
-          </div>
-          <div className="mr-8 text-lg text-white cursor-pointer">
-            <i className="fas fa-border-none "></i>
-          </div>
-          <div className="mr-8 text-lg text-white cursor-pointer">
-            <i className="fas fa-bell"></i>
-          </div>
-          <div className="mr-8 cursor-pointer">
-            <img
-              className="w-8 h-8 rounded-full"
-              src="https://lh3.googleusercontent.com/a-/AOh14GheSWRwqeTZyhIXwO6YEDuGAd4VzscgJDyQh6ES6g=s88-c-k-c0x00ffffff-no-rj-mo"
-              alt="dp"
-            />
-          </div>
-        </div>
-      </div>
-      {/* 2nd row  */}
-      <div className="flex h-full ">
-        {/* sidebar */}
+      <nav className="sticky inset-0 flex items-center justify-center w-full border-b bg-white z-20">
         <div
-          className="hidden lg:flex flex-col w-56 pb-56 bg-yt-nav overflow-y-auto"
-          id="style-4"
+          className="flex items-center justify-between w-full"
+          style={{ maxWidth: "975px", height: "3.64em" }}
         >
-          <SidebarSection data={list1} top={true} />
-          <SidebarSection data={list2} />
-          <SidebarSection data={list3} heading="SUBSCRIPTIONS" />
+          {/* logo  */}
+          <div className="" style={{ width: "24em" }}>
+            <img
+              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+              alt="logo"
+            />
+          </div>
+          {/* search  */}
+          <div
+            className="flex-1 flex bg-ig-gray border items-center justify-center rounded-sm"
+            style={{}}
+          >
+            <button className="pl-3">
+              <i className="fas fa-search text-black text-opacity-25 text-xs"></i>
+            </button>
+            <input
+              className=" bg-ig-gray text-ig-text pl-3 focus:outline-none"
+              placeholder="search"
+            />
+          </div>
+          {/* actions  */}
+          <div className="flex justify-end" style={{ width: "24em" }}>
+            <div>
+              <i className="fas fa-home text-black text-2xl mr-5"></i>
+            </div>
+            <div>
+              <i className="far fa-paper-plane text-black text-2xl mr-5"></i>
+            </div>
+            <div>
+              <i className="far fa-compass text-black text-2xl mr-5"></i>
+            </div>
+            <div>
+              <i className="far fa-heart text-black  text-2xl mr-5"></i>
+            </div>
+            <div>
+              <img
+                className="w-6 h-6 rounded-full"
+                src="https://lh3.googleusercontent.com/a-/AOh14GheSWRwqeTZyhIXwO6YEDuGAd4VzscgJDyQh6ES6g=s88-c-k-c0x00ffffff-no-rj-mo"
+                alt="dp"
+              />
+            </div>
+          </div>
         </div>
-        {/* feed  */}
-        <div className="flex flex-col flex-1 bg-yt-feed text-white px-6 py-8 overflow-y-auto">
-          <h1 className=" font-bold text-2xl">Recommended</h1>
-          <VideoGrid />
+      </nav>
+      <div className=" flex items-center justify-center w-full bg-ig-gray z-0">
+        <div
+          className="flex justify-center  w-full bg-ig-gray "
+          style={{ maxWidth: "975px" }}
+        >
+          <div className="bg-ig-gray" style={{ width: "614px" }}>
+            {/* card  */}
+            <InstaCards />
+          </div>
+          {/* info bar  */}
+          <div
+            className="hidden flex-col mt-12 bg-ig-gray lg:flex"
+            style={{ width: "293px", left: "62%" }}
+          ></div>
+          <div
+            className="fixed hidden flex-col mt-12 bg-ig-gray lg:flex"
+            style={{ width: "293px", left: "65%" }}
+          >
+            <InfoBar />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
+
+export default Home;
