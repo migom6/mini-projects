@@ -240,8 +240,8 @@ function VideoCard({ info }) {
 function VideoGrid() {
   return (
     <div className="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 col-gap-5 row-gap-12">
-      {list.map((item) => {
-        return <VideoCard info={item} />;
+      {list.map((item, index) => {
+        return <VideoCard info={item} key={index} />;
       })}
     </div>
   );
