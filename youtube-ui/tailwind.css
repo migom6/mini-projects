@@ -1,0 +1,13 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+#style-4::-webkit-scrollbar {
+  width: 6px;
+  background-color: "#202020";
+}
+
+#style-4:hover::-webkit-scrollbar-thumb {
+  background-color: #686868;
+}
