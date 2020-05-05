@@ -1,5 +1,5 @@
-import SidebarSection from "../components/SidebarSection";
-import VideoGrid from "../components/VideoGrid";
+import SidebarSection from "../components/youtube/SidebarSection";
+import VideoGrid from "../components/youtube/VideoGrid";
 
 const list1 = [
   { icon: "home", title: "Home" },
