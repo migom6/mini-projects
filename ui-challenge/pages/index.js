@@ -153,11 +153,15 @@ export default function Home() {
       {/* 2nd row  */}
       <div className="flex h-full ">
         {/* sidebar */}
-        <div className="w-56 pb-56 bg-yt-nav overflow-y-auto" id="style-4">
+        <div
+          className="hidden lg:flex flex-col w-56 pb-56 bg-yt-nav overflow-y-auto"
+          id="style-4"
+        >
           <SidebarSection data={list1} top={true} />
           <SidebarSection data={list2} />
           <SidebarSection data={list3} heading="SUBSCRIPTIONS" />
         </div>
+        {/* feed  */}
         <div className="flex flex-col flex-1 bg-yt-feed text-white px-6 py-8 overflow-y-auto">
           <h1 className=" font-bold text-2xl">Recommended</h1>
           <VideoGrid />
